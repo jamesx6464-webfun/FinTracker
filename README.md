@@ -7,7 +7,7 @@ FinTrack helps users track income, expenses, savings, and visualize spending usi
 
 ## 🚀 Live Demo
 
-https://jamesx6464-webfun.github.io/FinTrack/
+https://jamesx6464-webfun.github.io/FinTracker/
 
 ---
 
