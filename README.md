@@ -34,14 +34,29 @@ https://jamesx6464-webfun.github.io/FinTrack/
 
 ---
 
-## 📸 Preview
+## ⚙️ How It Works
 
-(Add screenshots here)
+FinTrack stores transactions in the browser using `localStorage`.  
+Each transaction includes:
 
-- Dashboard view
-- Mobile view
-- Chart breakdown
+- Description
+- Amount
+- Type (income / expense)
+
+The app then:
+
+1. Calculates totals dynamically
+2. Updates the dashboard in real time
+3. Renders a live Chart.js visualization
+4. Saves all changes automatically
 
 ---
 
-## 📂 Project Structure
+## 📱 Mobile Support
+
+FinTrack is fully responsive and includes:
+
+- Mobile-optimized layout
+- Bottom navigation style UX elements
+- Touch-friendly inputs
+- Adaptive charts and cards
