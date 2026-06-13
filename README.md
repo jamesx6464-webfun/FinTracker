@@ -57,6 +57,5 @@ The app then:
 FinTrack is fully responsive and includes:
 
 - Mobile-optimized layout
-- Bottom navigation style UX elements
 - Touch-friendly inputs
 - Adaptive charts and cards
