@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinTrack Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<header>
+    <h1>💰 FinTrack</h1>
+    <p>Personal Finance Dashboard</p>
+</header>
+
+<main>
+
+    <section class="summary-grid">
+
+        <div class="card balance">
+            <h3>Total Balance</h3>
+            <p class="amount" id="balance">$0.00</p>
+        </div>
+
+        <div class="card income">
+            <h3>Income</h3>
+            <p class="amount" id="income">$0.00</p>
+        </div>
+
+        <div class="card expense">
+            <h3>Expenses</h3>
+            <p class="amount" id="expenses">$0.00</p>
+        </div>
+
+        <div class="card savings">
+            <h3>Savings Rate</h3>
+            <p class="amount" id="savings-rate">0%</p>
+        </div>
+
+    </section>
+
+    <section class="dashboard-grid">
+
+        <!-- Transactions -->
+        <div class="card transactions">
+
+            <h2>Add Transaction</h2>
+
+            <form id="transaction-form">
+
+                <input type="text" id="description" placeholder="Description" required>
+
+                <input type="number" id="amount" placeholder="Amount" required>
+
+                <select id="type">
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+
+                <button type="submit">Add Transaction</button>
+
+            </form>
+
+            <h2>Recent Transactions</h2>
+            <div id="transaction-list"></div>
+
+        </div>
+
+        <!-- Chart -->
+        <div class="card chart-card">
+            <h2>Spending Breakdown</h2>
+
+            <canvas id="spendingChart"></canvas>
+        </div>
+
+        <!-- Goal -->
+        <div class="card goal-card">
+            <h2>Savings Goal</h2>
+
+            <p>Vacation Fund</p>
+
+            <div class="progress-bar">
+                <div class="progress" id="goal-progress"></div>
+            </div>
+
+            <p id="goal-text">0% Complete</p>
+        </div>
+
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>

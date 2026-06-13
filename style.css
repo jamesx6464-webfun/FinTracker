@@ -1,0 +1,267 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0b1220;
+    color: #e5e7eb;
+    min-height: 100vh;
+    padding: 25px;
+    line-height: 1.4;
+}
+
+/* ---------------- HEADER ---------------- */
+
+header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+header h1 {
+    font-size: 3rem;
+    letter-spacing: 1px;
+}
+
+header p {
+    color: #94a3b8;
+    margin-top: 5px;
+}
+
+/* ---------------- GRID ---------------- */
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    margin-bottom: 22px;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 18px;
+}
+
+/* ---------------- CARDS ---------------- */
+
+.card {
+    background: #111a2e;
+    border: 1px solid #24324a;
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    border-color: #334155;
+}
+
+.card h2,
+.card h3 {
+    margin-bottom: 12px;
+    color: #f1f5f9;
+}
+
+/* ---------------- SUMMARY NUMBERS ---------------- */
+
+.amount {
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+/* Accent borders */
+.balance { border-left: 6px solid #3b82f6; }
+.income  { border-left: 6px solid #22c55e; }
+.expense { border-left: 6px solid #ef4444; }
+.savings { border-left: 6px solid #f59e0b; }
+
+/* ---------------- FORM ---------------- */
+
+#transaction-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+#transaction-form input,
+#transaction-form select,
+#transaction-form button {
+    padding: 11px;
+    border-radius: 10px;
+    border: 1px solid #334155;
+    background: #0b1220;
+    color: #e5e7eb;
+    font-size: 1rem;
+}
+
+#transaction-form input:focus,
+#transaction-form select:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+#transaction-form button {
+    background: #3b82f6;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#transaction-form button:hover {
+    background: #2563eb;
+}
+
+/* ---------------- TRANSACTIONS ---------------- */
+
+.transaction-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #1f2a3a;
+    font-size: 0.95rem;
+}
+
+.transaction-row span:first-child {
+    color: #e2e8f0;
+}
+
+.positive {
+    color: #22c55e;
+    font-weight: bold;
+}
+
+.negative {
+    color: #ef4444;
+    font-weight: bold;
+}
+
+.delete-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+    color: #64748b;
+    font-size: 1rem;
+}
+
+.delete-btn:hover {
+    color: #ef4444;
+}
+
+/* ---------------- CHART ---------------- */
+
+.chart-card canvas {
+    width: 100% !important;
+    max-height: 260px;
+}
+
+/* ---------------- GOAL ---------------- */
+
+.progress-bar {
+    width: 100%;
+    height: 14px;
+    background: #1f2a3a;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 12px 0;
+}
+
+.progress {
+    height: 100%;
+    width: 60%;
+    background: linear-gradient(90deg, #22c55e, #16a34a);
+}
+
+/* ---------------- LAYOUT SPECIAL ---------------- */
+
+.goal-card {
+    grid-column: span 2;
+}
+
+/* ---------------- MOBILE (IMPORTANT PART) ---------------- */
+
+@media (max-width: 900px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .goal-card {
+        grid-column: span 1;
+    }
+}
+
+/* REAL MOBILE OPTIMIZATION */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 14px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 0.9rem;
+    }
+
+    .summary-grid {
+        gap: 12px;
+    }
+
+    .amount {
+        font-size: 1.5rem;
+    }
+
+    .card {
+        padding: 16px;
+        border-radius: 14px;
+    }
+
+    /* Stack transactions cleaner */
+    .transaction-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .transaction-row span:last-child {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    /* Form better for thumbs */
+    #transaction-form input,
+    #transaction-form select,
+    #transaction-form button {
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    /* Chart smaller but balanced */
+    .chart-card canvas {
+        max-height: 200px;
+    }
+
+    /* Goal card fixes */
+    .goal-card {
+        grid-column: span 1;
+    }
+
+    /* Slightly reduce shadows for mobile performance */
+    .card {
+        box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+    }
+}
